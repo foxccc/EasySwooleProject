@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.js"></script>
+    <title>Title</title>
+</head>
+<body>
+    <div>{:lang('Auth List')}</div>
+    <button type="button" lang='{$set_lang}' class='btn'>{:lang('Operate')}3</button>
+</body>
+<script>
+    $('.btn').click(function(){
+        var data={'lang':$(this).attr('lang')}
+        $.get("{:url('Index/lang')}",data,function(){
+            location.reload();
+        })
+    })
+</script>
+</html>
